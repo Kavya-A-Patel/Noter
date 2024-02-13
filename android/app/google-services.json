@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "734974547874",
+    "project_id": "noter-ayvak",
+    "storage_bucket": "noter-ayvak.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734974547874:android:7c4d8c0f0102ff647d04fb",
+        "android_client_info": {
+          "package_name": "com.foolish.noter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyX_GovvczRU0u00WNNBzCNQAZ4-XEJhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
