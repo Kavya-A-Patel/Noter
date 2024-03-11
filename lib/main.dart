@@ -13,6 +13,7 @@ void main() {
     title: 'Flutter Demo',
     theme: ThemeData.light(),
     darkTheme: ThemeData.dark(),
+    debugShowCheckedModeBanner: false,
     home: const HomePage(),
     routes: {
       loginRoute: (context) => const LoginView(),
