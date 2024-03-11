@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:noter/constants/routes.dart';
-import 'package:noter/enums/menu_action.dart';
 import 'package:noter/services/auth/auth_service.dart';
 import 'package:noter/services/cloud/cloud_note.dart';
 import 'package:noter/services/cloud/firebase_cloud_storage.dart';
@@ -36,29 +35,19 @@ class _NotesViewState extends State<NotesView> {
               },
               icon: const Icon(Icons.add),
             ),
-            PopupMenuButton<MenuAction>(
-              onSelected: (value) async {
-                switch (value) {
-                  case MenuAction.logout:
-                    final shouldLogout = await showLogOutDialog(context);
-                    if (shouldLogout) {
-                      await AuthService.firebase().logOut();
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                        loginRoute,
-                        (_) => false,
-                      );
-                    }
+            IconButton(
+              onPressed: () async {
+                final shouldLogout = await showLogOutDialog(context);
+                if (shouldLogout) {
+                  await AuthService.firebase().logOut();
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    loginRoute,
+                    (_) => false,
+                  );
                 }
               },
-              itemBuilder: (context) {
-                return const [
-                  PopupMenuItem<MenuAction>(
-                    value: MenuAction.logout,
-                    child: Text('Log Out'),
-                  ),
-                ];
-              },
-            )
+              icon: const Icon(Icons.logout),
+            ),
           ],
         ),
         body: StreamBuilder(
